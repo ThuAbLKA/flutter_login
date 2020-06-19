@@ -562,7 +562,10 @@ class _FlutterLoginState extends State<FlutterLogin>
         // resizeToAvoidBottomInset: false,
         body: Stack(
           children: <Widget>[
-            Image.asset(widget.backgroundImage),
+            Image.asset(
+              widget.backgroundImage,
+              fit: BoxFit.cover,
+            ),
             // GradientBox(
             //   colors: [
             //     loginTheme.pageColorLight ?? theme.primaryColor,
