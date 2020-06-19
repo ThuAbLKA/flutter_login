@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'src/providers/login_theme.dart';
 import 'src/widgets/null_widget.dart';
+import 'src/widgets/null_widget.dart';
 import 'theme.dart';
 import 'src/dart_helper.dart';
 import 'src/color_helper.dart';
@@ -210,6 +211,7 @@ class FlutterLogin extends StatefulWidget {
     @required this.onRecoverPassword,
     this.title = 'LOGIN',
     this.logo,
+    this.backgroundImage,
     this.messages,
     this.theme,
     this.emailValidator,
@@ -268,6 +270,8 @@ class FlutterLogin extends StatefulWidget {
   /// release mode, this will be overrided to false regardless of the value
   /// passed in
   final bool showDebugButtons;
+
+  final String backgroundImage;
 
   static final FormFieldValidator<String> defaultEmailValidator = (value) {
     if (value.isEmpty || !Regex.email.hasMatch(value)) {
@@ -558,14 +562,15 @@ class _FlutterLoginState extends State<FlutterLogin>
         // resizeToAvoidBottomInset: false,
         body: Stack(
           children: <Widget>[
-            GradientBox(
-              colors: [
-                loginTheme.pageColorLight ?? theme.primaryColor,
-                loginTheme.pageColorDark ?? theme.primaryColorDark,
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+            Image.asset(widget.backgroundImage),
+            // GradientBox(
+            //   colors: [
+            //     loginTheme.pageColorLight ?? theme.primaryColor,
+            //     loginTheme.pageColorDark ?? theme.primaryColorDark,
+            //   ],
+            //   begin: Alignment.topLeft,
+            //   end: Alignment.bottomRight,
+            // ),
             SingleChildScrollView(
               child: Theme(
                 data: theme,
