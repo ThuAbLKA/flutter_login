@@ -357,6 +357,17 @@ class LoginScreen extends StatelessWidget {
 
 <img src="https://github.com/NearHuscarl/flutter_login/raw/master/demo/theme.png" width="300">
 
+### Background Image
+
++ ThuAbLKA: added a new parameter to FlutterLogin to add a background image for the login
+
+```dart
+
+backgroundImage: 'assets/background.jpg',
+```
+
+<img src="https://github.com/ThuAbLKA/flutter_login/blob/master/demo/Screenshot_20200619-204732.png" width="300">
+
 ## Inspiration
 * [VNPAY App Interactions](https://dribbble.com/shots/3829985-VNPAY-App-Interactions)
 * [Flat UI Login animated](https://dribbble.com/shots/1058688-Flat-UI-Login-animated)
